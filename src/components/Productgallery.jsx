@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addDataToGallery } from '../store/slices/gallerySlice'
 import Item from './Item'
 
-
+    
 const Productgallery = () => {
     const dispatch = useDispatch() ;
     const getApiData = async () => {
