@@ -7,7 +7,7 @@ const Item = (props) => {
         <div key={product.id} className="group relative">
         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img
-            src={product.image}
+            src={product.images[0]}
             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
           />
         </div>
@@ -19,9 +19,9 @@ const Item = (props) => {
                 {product.title}
               </a>
             </h3>
-            <p className="mt-1 text-sm text-gray-500">{product.description[10]}</p>
+            <p className="mt-1 text-sm text-gray-500">{product.description.slice(0,50)}</p>
           </div>
-          <p className="text-sm font-medium text-gray-900">{product.price}</p>
+          <p className="text-sm mr-5 font-medium w-16 text-gray-900">{product.price} $ </p>
         </div>
       </div>
     )
