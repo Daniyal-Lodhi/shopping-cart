@@ -18,6 +18,7 @@ const Productgallery = () => {
  
     useEffect(()=>{
         getApiData();
+       
     },[])
 
     const data = useSelector((state) => state.gallery);
