@@ -1,10 +1,17 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../store/slices/cartSlice'
+import { Link } from 'react-router-dom'
 
 
 const ProductView = () => {
+  const dispatch = useDispatch()
     const product = useSelector((state)=>state.ProductView) 
-    console.log(product)
+
+    const addToCartFunc = ()=>{
+      dispatch(addToCart(product))
+      console.log(product)
+    }
   return (
     <div className=' mx-auto flex flex-col bg-slate-300 pt-10 justify-center align-middle px-5 space-y-5 pb-16'>
 
@@ -20,8 +27,11 @@ const ProductView = () => {
                 <p className='ml-5 w-[60%] text-gray-700'>{product.description}</p>
             </div>
             <div className='flex flex-col justify-center align-middle text-center'>
-            <h1 className='text-3xl font-bold  w-64 mt-10' >Price {product.price} Rs</h1>
-            <button className='bg-green-600 px-10 py-3 my-5 rounded-md hover:cursor-pointer hover:bg-green-700'>Add to Cart</button>
+            <h1 className='text-3xl font-bold  w-64 mt-10' >Price: {product.price} Rs</h1>
+            <div className='flex flex-col space-y-3 my-3'>
+            <button className='bg-green-600 px-10 py-3  rounded-md hover:cursor-pointer hover:bg-green-700' onClick={addToCartFunc}>Add to Cart</button>
+            <Link className='bg-purple-600 px-10 py-3 rounded-md hover:cursor-pointer hover:bg-green-700' to={'/cart'}>Go to Cart</Link>
+            </div>
             </div>
         </div>
     </div>

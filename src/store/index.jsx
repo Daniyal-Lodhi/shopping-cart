@@ -3,6 +3,7 @@ import gallerySlice from './slices/gallerySlice';
 import ProductView from './slices/ProductViewSlice';
 import storage from 'redux-persist/lib/storage'
 import { persistReducer } from 'redux-persist';
+import cartSlice from './slices/cartSlice';
 
 const persistConfig = {
     key : "root",
@@ -13,6 +14,7 @@ const persistConfig = {
 const reducer =  combineReducers({
     ProductView : ProductView,
     gallery : gallerySlice,
+    cart: cartSlice,
  
 
 })
