@@ -13,12 +13,13 @@ const ProductView = () => {
       console.log(product)
     }
   return (
-    <div className=' mx-auto flex flex-col bg-slate-300 pt-10 justify-center align-middle px-5 space-y-5 pb-16'>
+    <div className=' mx-auto flex flex-col bg-slate-300 pt-5 justify-center align-middle px-5 space-y-5 pb-16'>
+      <h1 className='text-slate-700 text-4xl'>Product Overview</h1>
 
-        <div className='flex justify-center space-x-20 mt-5'>
-        <img src={product.images[0]} alt="" className='w-[26%] h-70 rounded-lg '/>
-        <img src={product.images[1]} alt="" className='w-[26%] h-70 rounded-lg '/>
-        <img src={product.images[2]} alt="" className='w-[26%] h-70 rounded-lg '/>
+        <div className='flex justify-center space-x-10 mt-5'>
+        <img src={product.images[0]} alt="" className='w-[26%] h-70 rounded-md'/>
+        <img src={product.images[1]} alt="" className='w-[26%] h-70 rounded-md'/>
+        <img src={product.images[2]} alt="" className='w-[26%] h-70 rounded-md'/>
         </div>
 
         <div className='flex justify-between '>
