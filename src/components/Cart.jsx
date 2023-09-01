@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearCart, removeFromCart } from '../store/slices/cartSlice';
+import axios from 'axios';
 
 const Cart = () => {
     const cartData = useSelector((state) => state.cart)
@@ -18,7 +19,20 @@ const Cart = () => {
         console.log("hello")
     }
     
-    return (
+    // handle checkout
+    const handleCheckout = async ()=>{
+        axios.post("http://localhost:5000/checkout/create-checkout-session",{products})
+        .then((res)=>{
+            if(res.data.url){
+                window.location.href = res.data.url
+                        }
+        })   
+        .catch((error)=>{
+            console.log(error.message)
+        })
+    }  
+
+    return ( 
         <div className='w-[95%] mx-auto  '>
             <h1 className='text-4xl my-5 font-semibold text-gray-700'>Welcome to Cart</h1>
             <hr className=" border-black" />
@@ -54,7 +68,7 @@ const Cart = () => {
 
               <button className='py-1 px-4 bg-cyan-800 hover:bg-cyan-950 sm:text-lg text-base   rounded-md text-white' onClick={() => handleClearCart()}>Clear Cart</button>
 
-              <button className='py-1 px-4 bg-green-600 hover:bg-green-700   sm:text-lg text-base   rounded-md text-white' >Checkout</button>
+              <button className='py-1 px-4 bg-green-600 hover:bg-green-700   sm:text-lg text-base   rounded-md text-white' onClick={handleCheckout} >Checkout</button>
 
               </div>
               </div>

@@ -12,7 +12,7 @@ const Productgallery = () => {
             const res = await axios.get("https://api.escuelajs.co/api/v1/products?offset=0&limit=20")
             dispatch(addDataToGallery(res.data))
          } catch (error) {
-            console.log(error)
+            console.log(error.message)
         } 
     }  
  
