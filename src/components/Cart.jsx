@@ -7,14 +7,17 @@ const Cart = () => {
     const products = cartData.items;
     const totalPrice = cartData.totalPrice;
     const dispatch = useDispatch();
+    // delete item from cart
     const handleDeleteFromCart = (ProductId) => {
         dispatch(removeFromCart(ProductId))
     }
+
+    // Clear cart
     const handleClearCart = () => {
         dispatch(clearCart());
         console.log("hello")
     }
-
+    
     return (
         <div className='w-[95%] mx-auto  '>
             <h1 className='text-4xl my-5 font-semibold text-gray-700'>Welcome to Cart</h1>
