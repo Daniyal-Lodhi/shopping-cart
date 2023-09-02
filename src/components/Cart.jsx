@@ -68,7 +68,7 @@ const Cart = () => {
 
               <button className='py-1 px-4 bg-cyan-800 hover:bg-cyan-950 sm:text-lg text-base   rounded-md text-white' onClick={() => handleClearCart()}>Clear Cart</button>
 
-              <button className='py-1 px-4 bg-green-600 hover:bg-green-700   sm:text-lg text-base   rounded-md text-white' onClick={handleCheckout} >Checkout</button>
+              <button className='py-1 px-4 bg-green-600 hover:bg-green-700   sm:text-lg text-base   rounded-md text-white' onClick={handleCheckout}  disabled={true} >Checkout</button>
 
               </div>
               </div>

@@ -8,6 +8,7 @@ const stripe = Stripe(process.env.STRIPE_KEY) ;
 // console.log(process.env.STRIPE_KEY) 
 
 router.post('/create-checkout-session',async (req,res)=>{
+  try{
     const {products} = req.body ;
     const line_items = products.map((item)=>{
         return{
@@ -32,6 +33,10 @@ router.post('/create-checkout-session',async (req,res)=>{
          cancel_url: `http://localhost:5173/cart`,
        });
     res.send({url:session.url})
+      }
+      catch(error){
+        console.log(error)
+      }
 }) ;
 
 
