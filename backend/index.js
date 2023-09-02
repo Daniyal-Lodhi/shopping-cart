@@ -8,6 +8,9 @@ const app = express()
 app.use(express.json()) ;
 app.use(cors()) ;
 app.use('/checkout',stripeRouter)
+app.use('/', (req,res)=>{
+    res.send("hello")
+  });
 app.listen(5000,()=>{
     console.log("shopping Cart backend server")
 }) 

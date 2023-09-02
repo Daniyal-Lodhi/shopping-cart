@@ -16,11 +16,12 @@ const Cart = () => {
     // Clear cart
     const handleClearCart = () => {
         dispatch(clearCart());
-        console.log("hello")
     }
     
     // handle checkout
     const handleCheckout = async ()=>{
+        // https://drab-plum-beaver-shoe.cyclic.app/
+        // http://localhost:5000/checkout/create-checkout-session
         axios.post("http://localhost:5000/checkout/create-checkout-session",{products})
         .then((res)=>{
             if(res.data.url){
@@ -68,7 +69,7 @@ const Cart = () => {
 
               <button className='py-1 px-4 bg-cyan-800 hover:bg-cyan-950 sm:text-lg text-base   rounded-md text-white' onClick={() => handleClearCart()}>Clear Cart</button>
 
-              <button className='py-1 px-4 bg-green-600 hover:bg-green-700   sm:text-lg text-base   rounded-md text-white' onClick={handleCheckout}  disabled={true} >Checkout</button>
+              <button className={`py-1 px-4 ${products.length===0?'bg-gray-400':'bg-green-600'} ${products.length===0?'':'hover:bg-green-700'}   sm:text-lg text-base   rounded-md text-white`} onClick={handleCheckout}  disabled={products.length===0?true:false} >Checkout</button>
 
               </div>
               </div>

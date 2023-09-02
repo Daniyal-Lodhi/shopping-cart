@@ -21,7 +21,7 @@ const ProductView = () => {
   const addToCartFunc = () => {
     dispatch(addToCart(product))
     toast.success('Product added to cart', {
-      position: toast.POSITION.BOTTOM_LEFT,
+      position: toast.POSITION.TOP_RIGHT,
       // className: 'toast-message'
   
     });
