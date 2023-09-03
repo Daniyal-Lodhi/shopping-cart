@@ -30,7 +30,7 @@ router.post('/create-checkout-session',async (req,res)=>{
         line_items,
          mode: 'payment',
         //  https://shoppingcartby-daniyal-lodhi.netlify.app/checkoutsuccess
-         success_url: `facebook.com`,
+         success_url: `https://shoppingcartby-daniyal-lodhi.netlify.app/checkoutsuccess`,
          cancel_url: `https://shoppingcartby-daniyal-lodhi.netlify.app/cart`,
        });
     res.send({url:session.url})
