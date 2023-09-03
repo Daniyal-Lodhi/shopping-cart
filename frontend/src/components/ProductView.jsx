@@ -28,13 +28,13 @@ const ProductView = () => {
     
   }
   return (
-    <div className=' mx-auto flex flex-col bg-slate-300 pt-5  justify-center align-middle px-5 space-y-5 pb-3 sm:pb-8'>
-      <h1 className='text-slate-700 text-4xl'>Product Overview</h1>
+    <div className=' mx-auto flex flex-col bg-slate-300 pt-5 h-screen justify-center align-middle px-5 space-y-5 pb-3 sm:pb-8'>
+      <h1 className='text-slate-700 text-4xl my-4'>Product Overview</h1>
 
       <div className='flex sm:flex-row flex-col items-center space-x-0 space-y-3  justify-center sm:space-x-10 sm:space-y-0 mt-5'>
-        <img src={product.images[0]} alt="" className='sm:w-[26%] w-full  sm:h-70 h-52 rounded-md' />
-        <img src={product.images[1]} alt="" className='sm:w-[26%] w-full  sm:h-70 h-52 rounded-md' />
-        <img src={product.images[2]} alt="" className='sm:w-[26%] w-full  sm:h-70 h-52 rounded-md' />
+        <img src={product.images[0]} alt="" className='sm:w-[26%] w-full  sm:h-70 h-52 rounded-sm' />
+        <img src={product.images[1]} alt="" className='sm:w-[26%] w-full  sm:h-70 h-52 rounded-sm' />
+        <img src={product.images[2]} alt="" className='sm:w-[26%] w-full  sm:h-70 h-52 rounded-sm' />
       </div>
 
       <div className='flex justify-between flex-col sm:flex-row '>
