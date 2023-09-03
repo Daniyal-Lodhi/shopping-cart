@@ -28,7 +28,7 @@ const ProductView = () => {
     
   }
   return (
-    <div className=' mx-auto flex flex-col bg-slate-300 pt-5 h-screen justify-center align-middle px-5 space-y-5 pb-3 sm:pb-8'>
+    <div className=' mx-auto flex flex-col bg-slate-300 pt-5 h-10vh justify-center align-middle px-5 space-y-5 pb-3 sm:pb-8'>
       <h1 className='text-slate-700 text-4xl my-4'>Product Overview</h1>
 
       <div className='flex sm:flex-row flex-col items-center space-x-0 space-y-3  justify-center sm:space-x-10 sm:space-y-0 mt-5'>
@@ -44,7 +44,7 @@ const ProductView = () => {
         </div>
         <div className='flex flex-col justify-center sm:align-middle items-center text-center'>
           <h1 className='text-3xl font-bold  w-64 mt-10' >Price: {product.price} Rs</h1>
-          <div className='flex flex-col space-y-3 my-3 w-52'>
+          <div className='flex flex-col space-y-3 my-3 w-52 text-white'>
             <button className='bg-green-600 px-10 py-3  rounded-md  hover:cursor-pointer hover:bg-green-700' onClick={() => {
               addToCartFunc();
               showNotification()
