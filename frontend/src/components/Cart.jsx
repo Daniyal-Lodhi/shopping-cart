@@ -22,12 +22,13 @@ const Cart = () => {
     const handleCheckout = async ()=>{
         // https://drab-plum-beaver-shoe.cyclic.app/
         // http://localhost:5000/checkout/create-checkout-session
-        axios.post("http://localhost:5000/checkout/create-checkout-session",{products})
+        // https://dizzy-moth-wetsuit.cyclic.app/
+        axios.post("https://dizzy-moth-wetsuit.cyclic.app/checkout/create-checkout-session",{products})
         .then((res)=>{
             if(res.data.url){
                 window.location.href = res.data.url
-                        }
-        })   
+            }
+        }) 
         .catch((error)=>{
             console.log(error.message)
         })
@@ -66,11 +67,11 @@ const Cart = () => {
               <div className='flex justify-between my-auto items-center'>
                 <p className='font-bold text-gray-600'>Just One Step back of placing order</p>
             <div className='sm:space-x-3 sm:space-y-0 sy space-y-2 outline-none flex flex-col sm:flex-row  justify-center items-center' >
+                <p className='font-light'>Card number: 42(8 times)</p>
 
               <button className='py-1 px-4 bg-cyan-800 hover:bg-cyan-950 sm:text-lg text-base   rounded-md text-white' onClick={() => handleClearCart()}>Clear Cart</button>
 
               <button className={`py-1 px-4 ${products.length===0?'bg-gray-400':'bg-green-600'} ${products.length===0?'':'hover:bg-green-700'}   sm:text-lg text-base   rounded-md text-white`} onClick={handleCheckout}  disabled={products.length===0?true:false} >Checkout</button>
-
               </div>
               </div>
             </div>
