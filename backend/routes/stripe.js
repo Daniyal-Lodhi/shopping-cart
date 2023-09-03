@@ -29,7 +29,8 @@ router.post('/create-checkout-session',async (req,res)=>{
     const session = await stripe.checkout.sessions.create({
         line_items,
          mode: 'payment',
-         success_url: `https://shoppingcartby-daniyal-lodhi.netlify.app/checkoutsuccess`,
+        //  https://shoppingcartby-daniyal-lodhi.netlify.app/checkoutsuccess
+         success_url: `facebook.com`,
          cancel_url: `https://shoppingcartby-daniyal-lodhi.netlify.app/cart`,
        });
     res.send({url:session.url})

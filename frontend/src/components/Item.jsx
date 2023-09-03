@@ -35,7 +35,7 @@ const Item = (props) => {
             <p className="mt-1 text-sm text-gray-500">{product.description.slice(0,50)}...</p>
             <button className='px-3 py-1 rounded-md bg-blue-950 text-white my-2' >Overview</button>
           </div>
-          <p className="text-sm mr-5 font-medium w-16 text-gray-900">{product.price} $ </p>
+          <p className="text-sm mr-5 font-medium w-16 text-gray-900">{product.price} Rs </p>
           
         </div>
       </div>

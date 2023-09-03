@@ -22,8 +22,7 @@ const Cart = () => {
     const handleCheckout = async ()=>{
         // https://drab-plum-beaver-shoe.cyclic.app/
         // http://localhost:5000/checkout/create-checkout-session
-        // https://dizzy-moth-wetsuit.cyclic.app/
-        axios.post("https://dizzy-moth-wetsuit.cyclic.app/checkout/create-checkout-session",{products})
+        axios.post("https://ill-blue-lemming-kit.cyclic.app/checkout/create-checkout-session",{products})
         .then((res)=>{
             if(res.data.url){
                 window.location.href = res.data.url
